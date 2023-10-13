@@ -1,0 +1,52 @@
+/* CSS to set the background image for the entire page */
+body {
+    background-image: url("abcde.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* CSS to set the image on the left side */
+#background-image {
+    background-image: url("Translate1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 25%;
+    bottom: 20%;
+    left: 2%;
+    right:15%;
+    width: 20%; /* Adjust the width as needed */
+    height: 32%; /* This makes it cover the entire height */
+    z-index: -1; /* Places it behind the content */
+}
+
+/* Rest of your CSS styles... */
+
+/* CSS to make text area and select boxes transparent */
+textarea,
+select {
+    background-color: transparent;
+}
+
+/* CSS to make the text inside the textarea bold */
+.bold-text {
+    font-weight: bold;
+}
+
+/* CSS to make the "Translate" button transparent */
+.button {
+    background-color: transparent;
+}
+h1{
+    font-size: 50px;
+    color:darkblue;
+
+}
+h2{
+    font-size: 30px;
+    color:rgb(60, 60, 171);
+}
+.hi{
+    font-size: 30px;
+    color:rgb(60, 60, 171);
+}

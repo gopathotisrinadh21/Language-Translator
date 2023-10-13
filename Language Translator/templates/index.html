@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body align="center">
+    <div id="background-image"></div>
+    <div id="content-wrapper">
+        <h1>Language Translator</h1>
+        <form method="POST">
+            <label class="hi" for="text_to_translate"><b>Text to Translate:</b></label><br><br>
+            <textarea name="text_to_translate" id="text_to_translate" placeholder="Enter the Text" rows="4" cols="50" class="bold-text" required></textarea><br><br>
+
+            <label for="source_language"><b>Source Language:</b></label>
+            <select name="source_language" id="source_language">
+                {% for code, lang in languages.items() %}
+                    <option value="{{ code }}" {% if code == source_language %}selected{% endif %}>{{ lang }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="target_language"><b>Target Language:</b></label>
+            <select name="target_language" id="target_language">
+                {% for code, lang in languages.items() %}
+                    <option value="{{ code }}" {% if code == target_language %}selected{% endif %}>{{ lang }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <input type="submit" value="Translate" class="button">
+        </form>
+
+        {% if translation %}
+        <h2>Translation Result:</h2>
+        <p><b>{{ translation }}</p>
+
+        {% if audio_url %}
+        <audio controls>
+            <source src="{{ audio_url }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        {% endif %}
+
+        {% endif %}
+    </div>
+</body>
+</html>
